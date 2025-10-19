@@ -1,0 +1,42 @@
+import React, { useRef } from "react";
+
+const MortgageLoan = () => {
+  const formRef = useRef();
+  const { mortgageLoanFormFields, setMortgageLoanFormFields } = useApp()
+  
+  const handleSubmit = async () => {
+    try{
+      const formData = formRef?.current?.formData;
+      await applyForMortgageLoanService(formData);
+      toast.success("Form submitted successfully!")
+    } catch (error){
+      console.error(error)
+      toast.error(error?.message || "Failed to submit form")
+    }
+  }
+
+  return (
+    <div className="max-w-7xl mx-auto  flex flex-col items-center gap-4">
+      <div className="grid lg:grid-cols-2 bg-white rounded-xl shadow-lg overflow-hidden">
+           {/* Left Side - Image */}
+           <img
+             src="/Loan/mortgage-loan.jpg"
+             alt="Loan"
+             className="w-full h-96 object-cover lg:h-auto"
+           />
+           </div>
+      <CustomForm 
+        ref={formRef}
+        fields={mortgageLoanFormFields}
+        setFields={setMortgageLoanFormFields}
+        handleSubmit={handleSubmit}
+      />
+      <CustomButton 
+        onClick={() => formRef?.current?.submitForm()}
+        title={formRef?.current?.loadingState || 'SUBMIT'}
+        disabled={formRef?.current?.loadingState}
+      />
+    </div>
+  )
+}
+export default MortgageLoan;

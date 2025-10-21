@@ -26,7 +26,15 @@ const Register = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-blue-100 via-blue-200 to-blue-100 px-4">
-      <div className="bg-white shadow-2xl rounded-3xl p-10 w-full max-w-md">
+      <div className="bg-white shadow-2xl rounded-3xl p-10 w-full max-w-md m-4">
+
+         <div className="md:block">
+          <img
+            src="/register.png"
+            alt="Register Illustration"
+            className="w-full h-60 object-cover rounded-2xl shadow-lg"
+          />
+        </div>
         <h2 className="text-3xl font-extrabold text-center text-blue-700 mb-6">
           Create Your Account
         </h2>

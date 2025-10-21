@@ -139,7 +139,7 @@ const FreelancerForm = () => {
   return (
     <>
    
-    <div className="bg-white rounded-lg shadow-md max-w-3xl mx-auto mt-10">
+    <div className="bg-white rounded-lg shadow-md max-w-3xl mx-auto mt-10 p-8 ">
       <h2 className="text-2xl font-semibold mb-6 text-center text-cyan-900">
         Freelancer Registration Form
       </h2>

@@ -175,7 +175,7 @@ const BusinessLoan = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-3xl mx-auto bg-white rounded shadow space-y-6"
+      className="max-w-3xl mx-auto bg-white rounded shadow space-y-6 p-8"
     >
       <div className="grid lg:grid-cols-2 bg-white rounded-xl shadow-lg overflow-hidden">
         {/* Left Side - Image */}

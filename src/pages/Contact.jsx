@@ -18,7 +18,15 @@ const Contact = () => {
   return (
     <section className="py-20 bg-gradient-to-r from-blue-50 to-blue-100 text-gray-800">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-start">
-        {/* Left: Contact Info */}
+         
+        <div className="md:block">
+          <img
+            src="/contact.jpg"
+            alt="Contact Illustration"
+            className="w-full h-full object-cover rounded-2xl shadow-lg"
+          />
+        </div>
+       
         <div className="space-y-8">
           <h2 className="text-4xl font-bold text-blue-600 mb-4">Contact Us</h2>
           <p className="text-gray-700 text-lg leading-relaxed">
@@ -29,7 +37,7 @@ const Contact = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-4 text-gray-700">
               <FaEnvelope className="text-blue-600 text-xl" />
-              <span>support@yourmoney.com</span>
+              <span>support@yoursmoney.com</span>
             </div>
             <div className="flex items-center gap-4 text-gray-700">
               <FaPhoneAlt className="text-blue-600 text-xl" />

@@ -1,62 +1,55 @@
-import React, { useState } from "react";
-
-// ✅ Import all your forms/pages directly
-import PersonalLoanForm from "../forms/PersonalLoan";
-import BusinessLoanForm from "../forms/BusinessLoan";
-import HomeLoanForm from "../forms/HomeLoan";
-import MortgageLoanForm from "../forms/MortgageLoan";
-import CreditCard from "./CreditCard";
+import React from "react";
+import { Link } from "react-router-dom";
+import {
+  FaPiggyBank,
+  FaCreditCard,
+  FaHome,
+  FaBuilding,
+  FaLandmark,
+  FaChartLine,
+  FaRegHandshake,
+  FaHeartbeat,
+  FaUser,
+  FaStore,
+} from "react-icons/fa";
 
 const FintechServices = () => {
-  const [activeService, setActiveService] = useState(null);
-
   const services = [
-    { name: "AEPS", component: <div className="text-xl text-gray-600">AEPS Service Coming Soon</div> },
-    { name: "Digital Bank Account Opening", component: <div className="text-xl text-gray-600">Digital Bank Account Coming Soon</div> },
-    { name: "Personal Loan", component: <PersonalLoanForm /> },
-    { name: "Business Loan", component: <BusinessLoanForm /> },
-    { name: "Home Loan", component: <HomeLoanForm /> },
-    { name: "Mortgage Loan", component: <MortgageLoanForm /> },
-    { name: "Credit Card", component: <CreditCard /> },
-    { name: "Mutual Fund", component: <div className="text-xl text-gray-600">Mutual Fund Page Coming Soon</div> },
-    { name: "Demat Account Opening", component: <div className="text-xl text-gray-600">Demat Account Page Coming Soon</div> },
-    { name: "Stock Market - Trading", component: <div className="text-xl text-gray-600">Trading Page Coming Soon</div> },
-    { name: "BharatPe Merchant Loan Project", component: <div className="text-xl text-gray-600">BharatPe Project Page Coming Soon</div> },
-    { name: "Ring Finance QR Install Project", component: <div className="text-xl text-gray-600">Ring Finance QR Page Coming Soon</div> },
-    { name: "Tide Merchant QR Code", component: <div className="text-xl text-gray-600">Tide QR Page Coming Soon</div> },
-    { name: "Bajaj NACH Collection", component: <div className="text-xl text-gray-600">Bajaj NACH Page Coming Soon</div> },
-    { name: "Health Survey Project", component: <div className="text-xl text-gray-600">Health Survey Page Coming Soon</div> },
+    { name: "AEPS", icon: <FaPiggyBank />, link: "#", gradient: "from-blue-400 to-indigo-500" },
+    { name: "Digital Bank Account Opening", icon: <FaLandmark />, link: "#", gradient: "from-purple-400 to-pink-500" },
+    { name: "Personal Loan", icon: <FaUser />, link: "/fintech-services/personal-loan", gradient: "from-green-400 to-teal-500" },
+    { name: "Business Loan", icon: <FaBuilding />, link: "/fintech-services/business-loan", gradient: "from-yellow-400 to-orange-500" },
+    { name: "Home Loan", icon: <FaHome />, link: "/fintech-services/home-loan", gradient: "from-red-400 to-pink-500" },
+    { name: "Mortgage Loan", icon: <FaRegHandshake />, link: "/fintech-services/mortgage-loan", gradient: "from-indigo-400 to-blue-500" },
+    { name: "Credit Card", icon: <FaCreditCard />, link: "#", gradient: "from-pink-400 to-red-500" },
+    { name: "Mutual Fund", icon: <FaChartLine />, link: "#", gradient: "from-green-300 to-lime-500" },
+    { name: "Demat Account Opening", icon: <FaLandmark />, link: "#", gradient: "from-purple-300 to-indigo-500" },
+    { name: "Stock Market - Trading", icon: <FaChartLine />, link: "#", gradient: "from-orange-400 to-red-500" },
+    { name: "BharatPe Merchant Loan Project", icon: <FaStore />, link: "#", gradient: "from-teal-400 to-cyan-500" },
+    { name: "Ring Finance QR Install Project", icon: <FaRegHandshake />, link: "#", gradient: "from-yellow-400 to-red-400" },
+    { name: "Tide Merchant QR Code", icon: <FaStore />, link: "#", gradient: "from-blue-300 to-indigo-400" },
+    { name: "Bajaj NACH Collection", icon: <FaPiggyBank />, link: "#", gradient: "from-green-400 to-blue-500" },
+    { name: "Health Survey Project", icon: <FaHeartbeat />, link: "#", gradient: "from-red-400 to-pink-500" },
   ];
 
-  const handleClick = (serviceName) => {
-    setActiveService(serviceName);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  const active = services.find((s) => s.name === activeService);
-
   return (
-    <section className=" py-2 px-6 max-w-4xl mx-auto text-center">
-      {!activeService ? (
-        <>
-          <h2 className="text-4xl font-bold text-blue-700 mb-8">Fintech Services</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                onClick={() => handleClick(service.name)}
-                className="bg-white shadow p-6 rounded-xl hover:shadow-lg hover:scale-105 cursor-pointer transition duration-300"
-              >
-                <h3 className="text-lg font-semibold text-blue-600">{service.name}</h3>
-              </div>
-            ))}
-          </div>
-        </>
-      ) : (
-        <div className="bg-white p-8 rounded-2xl shadow-xl">
-          <div>{active.component}</div>
-        </div>
-      )}
+    <section className="min-h-screen py-16 px-6 bg-gradient-to-br from-blue-50 via-white to-blue-100">
+      <h2 className="text-4xl font-bold text-blue-700 mb-10 text-center">
+        Fintech Services
+      </h2>
+
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {services.map((service, index) => (
+          <Link
+            key={index}
+            to={service.link}
+            className={`bg-gradient-to-r ${service.gradient} text-white shadow-lg p-8 rounded-2xl flex flex-col items-center justify-center gap-4 hover:shadow-2xl hover:-translate-y-1 transform transition-all duration-300 cursor-pointer`}
+          >
+            <div className="text-4xl">{service.icon}</div>
+            <h3 className="text-lg font-semibold">{service.name}</h3>
+          </Link>
+        ))}
+      </div>
     </section>
   );
 };

@@ -6,9 +6,14 @@ const Footer = () => {
       <div className="container mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* About / Logo */}
         <div>
-          <h1 className="text-2xl font-bold mb-4">Your Money</h1>
+          <img src="/logo2.png" alt="YourMoney Logo" className="h-15 mb-4" />
+         <h1 className="text-2xl font-bold mb-4">
+            <span className="text-black">Yours</span>{" "}
+            <span className="text-red-600">Money</span>
+          </h1>
+
           <p className="text-white/80">
-            A fintech platform providing banking, loans, investments, and logistics services in collaboration with our clients.
+            A fintech platform providing banking, loans, investments, and logistics services in collaboration with many clients.
           </p>
         </div>
 
@@ -30,7 +35,7 @@ const Footer = () => {
         {/* Contact Info */}
         <div>
           <h2 className="text-xl font-semibold mb-4">Contact Us</h2>
-          <p>Office: 12.B.B.D. Bag (East), 2nd Floor, Kolkata - 700001</p>
+          {/* <p>Office: 12.B.B.D. Bag (East), 2nd Floor, Kolkata - 700001</p> */}
           <p>Phone: <a href="tel:+919903020636" className="hover:text-yellow-300 transition">+91 9903020636</a></p>
           <p>Email: <a href="mailto:contact@yoursmoney.in" className="hover:text-yellow-300 transition">contact@yoursmoney.in</a></p>
 
@@ -69,8 +74,8 @@ const Footer = () => {
       </div>
 
       {/* Bottom copyright */}
-      <div className="border-t border-white/20 mt-6 py-4 text-center text-white/70">
-        &copy; {new Date().getFullYear()} Your Money. All rights reserved.
+       <div className="text-center text-sm text-gray-400 mt-6 pb-4">
+        © {new Date().getFullYear()} First Track Solution Technologies. All Rights Reserved.
       </div>
     </footer>
   );

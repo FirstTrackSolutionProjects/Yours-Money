@@ -16,13 +16,16 @@ const LogIn = () => {
   return (
     <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-blue-100 via-blue-200 to-blue-100 px-4">
       <div className="bg-white shadow-2xl rounded-3xl p-10 w-full max-w-md">
-        <h2 className="text-3xl font-extrabold text-center text-blue-700 mb-8">
-          Welcome Back
-        </h2>
-        {/* <p className="text-center text-gray-600 mb-6">
-          Login to access your fintech dashboard and manage your finances securely.
-        </p> */}
-        <form onSubmit={handleSubmit} className="space-y-6">
+        
+        <div className=" md:block">
+          <img
+            src="/login.jpg"
+            alt="Login Illustration"
+            className="w-full h-60 object-cover rounded-2xl shadow-lg"
+          />
+        </div>
+      
+        <form onSubmit={handleSubmit} className="space-y-6 mt-3">
           <div>
             <label className="block text-gray-700 font-medium mb-2">Email</label>
             <input

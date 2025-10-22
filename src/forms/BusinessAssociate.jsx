@@ -195,7 +195,7 @@ const BusinessAssociate = () => {
         <div className="grid lg:grid-cols-2 bg-white rounded-xl shadow-lg overflow-hidden">
           {/* Left Side - Image */}
           <img
-            src="/Partners/business-associate.jpg"
+            src="/Loan/business-associate.jpg"
             alt="partner"
             className="w-full h-96 lg:h-[400px] object-cover"
           />

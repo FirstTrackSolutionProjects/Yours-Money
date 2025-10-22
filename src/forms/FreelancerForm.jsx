@@ -147,7 +147,7 @@ const FreelancerForm = () => {
         <div className="grid lg:grid-cols-2 bg-white rounded-xl shadow-lg overflow-hidden">
           {/* Left Side - Image */}
           <img
-            src="/Partners/freelancer.jpg"
+            src="/Loan/freelancer.jpg"
             alt="partner"
             className="w-full h-80 lg:h-[400px] object-cover rounded-l-xl"
           />

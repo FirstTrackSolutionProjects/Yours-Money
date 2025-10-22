@@ -75,7 +75,7 @@ const Footer = () => {
 
       {/* Bottom copyright */}
        <div className="text-center text-sm text-gray-400 mt-6 pb-4">
-        © {new Date().getFullYear()} First Track Solution Technologies. All Rights Reserved.
+      Yours Money, developed by First Track Solution Technologies. All Rights Reserved.
       </div>
     </footer>
   );

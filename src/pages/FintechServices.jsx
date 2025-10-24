@@ -21,7 +21,13 @@ const FintechServices = () => {
     { name: "Business Loan", icon: <FaBuilding />, link: "/fintech-services/business-loan", gradient: "from-yellow-400 to-orange-500" },
     { name: "Home Loan", icon: <FaHome />, link: "/fintech-services/home-loan", gradient: "from-red-400 to-pink-500" },
     { name: "Mortgage Loan", icon: <FaRegHandshake />, link: "/fintech-services/mortgage-loan", gradient: "from-indigo-400 to-blue-500" },
-    { name: "Credit Card", icon: <FaCreditCard />, link: "#", gradient: "from-pink-400 to-red-500" },
+    { name: "Credit Card", icon: <FaCreditCard />, link: "/fintech-services/credit-card", gradient: "from-pink-400 to-red-500" },
+   {
+    name: "Insurance", icon: <FaRegHandshake />, 
+    link: "/fintech-services/insurance",
+    gradient: "from-green-400 to-teal-500"
+  },
+
     { name: "Mutual Fund", icon: <FaChartLine />, link: "#", gradient: "from-green-300 to-lime-500" },
     { name: "Demat Account Opening", icon: <FaLandmark />, link: "#", gradient: "from-purple-300 to-indigo-500" },
     { name: "Stock Market - Trading", icon: <FaChartLine />, link: "#", gradient: "from-orange-400 to-red-500" },

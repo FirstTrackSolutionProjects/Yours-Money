@@ -8,7 +8,7 @@ const AboutSection = () => {
         {/* Text Content */}
         <div className="space-y-6">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-            About YourMoney
+            About Yours Money
           </h2>
          <p className="text-gray-600 text-lg ">
           <span className="text-black font-bold">Yours</span>{" "}

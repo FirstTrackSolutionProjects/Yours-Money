@@ -1,4 +1,10 @@
 import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+import getPutObjectUrlService from "../services/s3Services/getPutObjectUrlService";
+import putObjectService from "../services/s3Services/putObjectService";
+import { toast } from "react-toastify";
+import applyForFreelancerService from "../services/partnerServices/applyForFreelancerService";
+
 
 const fileFields = [
   "resume",
@@ -15,7 +21,7 @@ const requiredFiles = [
   "bankPassbook"
 ];
 
-const FreelancerForm = () => {
+const Freelancer = () => {
   const [sameAddress, setSameAddress] = useState(false);
   const [formData, setFormData] = useState({
     title: "",
@@ -139,7 +145,8 @@ const FreelancerForm = () => {
   return (
     <>
    
-    <div className="bg-white rounded-lg shadow-md max-w-3xl mx-auto mt-10 p-8 ">
+    
+    <div className="bg-white p-6 rounded-lg shadow-md max-w-3xl mx-auto mt-10">
       <h2 className="text-2xl font-semibold mb-6 text-center text-cyan-900">
         Freelancer Registration Form
       </h2>
@@ -147,7 +154,7 @@ const FreelancerForm = () => {
         <div className="grid lg:grid-cols-2 bg-white rounded-xl shadow-lg overflow-hidden">
           {/* Left Side - Image */}
           <img
-            src="/Loan/freelancer.jpg"
+            src="/Partners/freelancer.jpg"
             alt="partner"
             className="w-full h-80 lg:h-[400px] object-cover rounded-l-xl"
           />
@@ -406,4 +413,4 @@ const FreelancerForm = () => {
   );
 };
 
-export default FreelancerForm;
+export default Freelancer;

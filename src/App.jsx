@@ -1,5 +1,5 @@
 import React from "react"; 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -26,10 +26,12 @@ import PersonalLoanForm from "./forms/PersonalLoan";
 import BusinessLoanForm from "./forms/BusinessLoan";
 import HomeLoanForm from "./forms/HomeLoan";
 import MortgageLoanForm from "./forms/MortgageLoan";
+import CreditCard from "./pages/CreditCard";
+import Insurance from "./pages/Insurance"
 
 function App() {
   return (
-    <Router>
+    
       <div className="flex flex-col min-h-screen">
         <Navbar />
 
@@ -58,12 +60,15 @@ function App() {
             <Route path="/fintech-services/business-loan" element={<BusinessLoanForm />} />
             <Route path="/fintech-services/home-loan" element={<HomeLoanForm />} />
             <Route path="/fintech-services/mortgage-loan" element={<MortgageLoanForm />} />
+            <Route path="/fintech-services/credit-card" element={<CreditCard />} />
+            <Route path="/fintech-services/insurance"
+            element={<Insurance />} />
           </Routes>
         </main>
 
         <Footer />
       </div>
-    </Router>
+  
   );
 }
 

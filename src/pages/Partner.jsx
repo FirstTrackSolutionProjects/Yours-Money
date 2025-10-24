@@ -28,7 +28,7 @@ const Partner = () => {
         </p>
 
         <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto mb-12">
-          Collaborate with{" "}
+          Associate with{" "}
           <span className="font-semibold text-black">Yours</span>{" "}
           <span className="font-semibold text-red-700">Money</span> as a
           Freelancer or Business Associate. Expand your reach, unlock new

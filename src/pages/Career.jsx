@@ -5,7 +5,6 @@ const Career = () => {
     firstName: "",
     lastName: "",
     email: "",
-    stdCode: "+91",
     phone: "",
     dob: "",
     gender: "",
@@ -15,6 +14,7 @@ const Career = () => {
     pincode: "",
     country: "",
     description: "",
+    qualification: "",
     cv: null,
   });
 
@@ -29,8 +29,15 @@ const Career = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!phoneRegex.test(formData.phone)) {
+      alert("Please enter a valid 10-digit Indian phone number.");
+      return;
+    }
+
     console.log("Form submitted:", formData);
-    // You can send this formData to your backend or email API
+    alert("Application submitted successfully!");
   };
 
   return (
@@ -99,9 +106,9 @@ const Career = () => {
               />
             </div>
             <div>
-              <label className="block text-gray-700 font-medium mb-2">Phone (with STD code)</label>
+              <label className="block text-gray-700 font-medium mb-2">Phone</label>
               <div className="flex gap-2">
-                <input
+                {/* <input
                   type="text"
                   name="stdCode"
                   value={formData.stdCode}
@@ -109,14 +116,15 @@ const Career = () => {
                   placeholder="+91"
                   className="w-1/3 border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
                   required
-                />
+                /> */}
                 <input
                   type="tel"
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="9876543210"
-                  className="w-2/3 border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                  placeholder="10-digit number"
+                  maxLength="10"
+                  className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
                   required
                 />
               </div>
@@ -243,6 +251,23 @@ const Career = () => {
               className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             ></textarea>
+          </div>
+
+          
+          {/* ✅ Highest Qualification */}
+          <div>
+            <label className="block text-gray-700 font-medium mb-2">
+              Highest Qualification
+            </label>
+            <input
+              type="text"
+              name="qualification"
+              value={formData.qualification}
+              onChange={handleChange}
+              placeholder="B.Tech, MBA, etc."
+              className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
           </div>
 
           {/* Upload CV */}

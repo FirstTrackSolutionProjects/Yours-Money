@@ -1,5 +1,9 @@
 import React, { useState } from "react";
-
+import { v4 as uuidv4 } from "uuid";
+import getPutObjectUrlService from "../services/s3Services/getPutObjectUrlService";
+import putObjectService from "../services/s3Services/putObjectService";
+import applyForBusinessLoanService from "../services/loanServices/businessLoanServices/applyForBusinessLoanService";
+import { toast } from "react-toastify";
 
 const fileFields = [
   "photo", "officePhoto1", "officePhoto2", "officePhoto3", "officePhoto4",
@@ -175,7 +179,7 @@ const BusinessLoan = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-3xl mx-auto bg-white rounded shadow space-y-6 p-8"
+      className="max-w-3xl mx-auto bg-white p-6 rounded shadow space-y-6"
     >
       <div className="grid lg:grid-cols-2 bg-white rounded-xl shadow-lg overflow-hidden">
         {/* Left Side - Image */}

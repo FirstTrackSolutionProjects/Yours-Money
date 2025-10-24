@@ -13,7 +13,7 @@ const Footer = () => {
           </h1>
 
           <p className="text-white/80">
-            A fintech platform providing banking, loans, investments, and logistics services in collaboration with many clients.
+            A fintech platform providing banking, loans, investments & logistics services. 
           </p>
         </div>
 

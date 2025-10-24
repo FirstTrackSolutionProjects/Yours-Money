@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const faqs = [
-  { q: "Is my data secure?", a: "Yes, we use 256-bit encryption for all transactions and follow industry-standard security protocols to protect your data." },
-  { q: "How do I verify my KYC?", a: "Upload your Aadhaar and PAN card under the KYC section. Our system will process verification within 24-48 hours." },
-  { q: "When will I receive a refund?", a: "Refunds are processed within 3-5 business days, depending on your bank’s processing time." },
-  { q: "Can I access my account on multiple devices?", a: "Yes, your account can be accessed securely from mobile, tablet, or desktop devices." },
+  { q: "Is my data secure?", a: "Yes, we use 256-bit encryption for all & follow industry-standard security protocols to protect your data." },
+  { q: "How do I apply for a loan?", a: "You can apply for a loan through our app or website by filling out the application form and submitting the required documents." },
+  { q: "What are the interest rates?", a: "Interest rates vary based on the type of loan and your credit profile. Please check our Rates & Fees section for detailed information." },
+  { q: "What investment options are available?", a: "We offer a variety of investment options including mutual funds, stocks, bonds, and fixed deposits to suit your financial goals." },
   { q: "How do I contact support?", a: "You can contact our support team via email at support@yourmoney.com or through the in-app chat for instant assistance." },
+  
 ];
 
 const FAQ = () => {

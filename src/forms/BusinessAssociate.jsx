@@ -1,4 +1,10 @@
 import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+import getPutObjectUrlService from "../services/s3Services/getPutObjectUrlService";
+import putObjectService from "../services/s3Services/putObjectService";
+import { toast } from "react-toastify";
+import applyForBusinessAssociateService from "../services/partnerServices/applyForBusinessAssociateService";
+
 
 const fileFields = [
   "proposal",
@@ -185,8 +191,9 @@ const BusinessAssociate = () => {
 
   return (
     <>
-
-    <div className="bg-white rounded-lg shadow-md max-w-3xl mx-auto mt-10 p-8">
+   
+      
+    <div className="bg-white p-6 rounded-lg shadow-md max-w-3xl mx-auto mt-10">
       <h2 className="text-2xl font-semibold mb-6 text-center text-blue-700">
         Business Associate Registration Form
       </h2>
@@ -195,7 +202,7 @@ const BusinessAssociate = () => {
         <div className="grid lg:grid-cols-2 bg-white rounded-xl shadow-lg overflow-hidden">
           {/* Left Side - Image */}
           <img
-            src="/Loan/business-associate.jpg"
+            src="/Partners/business-associate.jpg"
             alt="partner"
             className="w-full h-96 lg:h-[400px] object-cover"
           />

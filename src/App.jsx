@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-
+import { ToastContainer } from "react-toastify"
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -34,7 +34,7 @@ function App() {
     
       <div className="flex flex-col min-h-screen">
         <Navbar />
-
+        <ToastContainer />
         <main className="flex-grow pt-20">
           <Routes>
             <Route path="/" element={<Home />} />

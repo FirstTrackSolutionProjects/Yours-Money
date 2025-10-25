@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, forwardRef, useImperativeHandle, createRef } from "react";
 import { Box, Grid, TextField, Select, MenuItem, FormControl, InputLabel, InputAdornment, Typography, Switch, FormControlLabel } from "@mui/material";
 import { toast } from "react-toastify";
-// import { MuiFileInput } from 'mui-file-input';
+import { MuiFileInput } from 'mui-file-input';
 import MultiSelect from "@/components/CustomComponents/MultiSelect";
 import FileAttachmentIcon from '@/icons/FileAttachmentIcon';
 import ClearFieldIcon from "@/icons/ClearFieldIcon";
@@ -538,7 +538,7 @@ const CustomForm = forwardRef(({ fields, setFields, handleSubmit = ()=>{}, exist
                   style={{ width: 90, maxHeight: 120, borderRadius: 8, cursor: 'pointer' }}
                   onClick={() => {
                     if (viewMode) return;
-                    // Trigger the internal file input of MuiFileInput
+                  
                     if (photoFileRef.current) {
                       photoFileRef.current.querySelector('input')?.click();
                     }

@@ -132,7 +132,7 @@ const CreditCard = () => {
         <div className="grid lg:grid-cols-2 bg-white rounded-xl shadow-lg overflow-hidden">
           {/* Left Side - Image */}
           <img
-            src="/images/credit-card.jpg"
+            src="/credit-card.jpg"
             alt="creditcard"
             className="w-full h-60 object-cover"
           />

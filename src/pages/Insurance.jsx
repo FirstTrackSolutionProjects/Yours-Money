@@ -29,7 +29,7 @@ const Insurance = () => {
       <div className="grid lg:grid-cols-2 bg-white rounded-xl shadow-lg overflow-hidden">
            {/* Left Side - Image */}
            <img
-             src="/images/insurance.jpg"
+             src="/insurance.jpg"
              alt="Loan"
              className="w-full h-96 object-cover lg:h-auto"
            />

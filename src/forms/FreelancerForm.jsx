@@ -21,7 +21,7 @@ const requiredFiles = [
   "bankPassbook"
 ];
 
-const Freelancer = () => {
+const FreelancerForm = () => {
   const [sameAddress, setSameAddress] = useState(false);
   const [formData, setFormData] = useState({
     title: "",
@@ -144,8 +144,6 @@ const Freelancer = () => {
 
   return (
     <>
-   
-    
     <div className="bg-white p-6 rounded-lg shadow-md max-w-3xl mx-auto mt-10">
       <h2 className="text-2xl font-semibold mb-6 text-center text-cyan-900">
         Freelancer Registration Form
@@ -413,4 +411,4 @@ const Freelancer = () => {
   );
 };
 
-export default Freelancer;
+export default FreelancerForm;

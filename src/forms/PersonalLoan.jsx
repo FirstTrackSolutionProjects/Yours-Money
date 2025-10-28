@@ -1,5 +1,9 @@
 import React, { useState } from "react";
-
+import { toast } from "react-toastify";
+import { v4 } from "uuid";
+import getPutObjectUrlService from "../services/s3Services/getPutObjectUrlService";
+import putObjectService from "../services/s3Services/putObjectService";
+import applyForPersonalLoanService from "../services/loanServices/personalLoanServices/applyForPersonalLoanService";
 
 const PersonalLoan = () => {
   const [sameAddress, setSameAddress] = useState(false);
@@ -143,7 +147,7 @@ const PersonalLoan = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-4xl mx-auto bg-white rounded shadow space-y-6 p-8">
+    <form onSubmit={handleSubmit} className="max-w-4xl mx-auto bg-white p-6 rounded shadow space-y-6">
 
        <div className="grid lg:grid-cols-2 bg-white rounded-xl shadow-lg overflow-hidden">
           {/* Left Side - Image */}

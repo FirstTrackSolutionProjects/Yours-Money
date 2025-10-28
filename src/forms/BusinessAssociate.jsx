@@ -192,7 +192,7 @@ const BusinessAssociate = () => {
   return (
     <>
    
-      
+    
     <div className="bg-white p-6 rounded-lg shadow-md max-w-3xl mx-auto mt-10">
       <h2 className="text-2xl font-semibold mb-6 text-center text-blue-700">
         Business Associate Registration Form

@@ -4,6 +4,7 @@ import { v4 } from "uuid";
 import getPutObjectUrlService from "../services/s3Services/getPutObjectUrlService";
 import putObjectService from "../services/s3Services/putObjectService";
 import applyForPersonalLoanService from "../services/loanServices/personalLoanServices/applyForPersonalLoanService";
+import { Helmet } from "react-helmet"
 
 const PersonalLoan = () => {
   const [sameAddress, setSameAddress] = useState(false);
@@ -147,6 +148,15 @@ const PersonalLoan = () => {
   };
 
   return (
+<>
+      <Helmet>
+                <title>Personal Loan | Yours Money </title>
+                <meta
+                  name="description"
+                  content="Apply for personal, business, home, car, education, and other loans with Yours Money. Quick approval and minimal documentation."
+                />
+              </Helmet>
+
     <form onSubmit={handleSubmit} className="max-w-4xl mx-auto bg-white p-6 rounded shadow space-y-6">
 
        <div className="grid lg:grid-cols-2 bg-white rounded-xl shadow-lg overflow-hidden">
@@ -624,6 +634,7 @@ const PersonalLoan = () => {
         Apply
       </button>
     </form>
+    </>
   );
 };
 

@@ -1,10 +1,20 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet"
 
 const About = () => {
   const [showMore, setShowMore] = useState(false);
 
   return (
-    <section className="relative py-24 bg-gradient-to-br from-blue-50 via-white to-teal-50 overflow-hidden">
+<>
+      <Helmet>
+                <title>About | Yours Money </title>
+                <meta
+                  name="description"
+                  content="Apply for personal, business, home, car, education, and other loans with Yours Money. Quick approval and minimal documentation."
+                />
+              </Helmet>
+
+    <section className="relative py-24 bg-gradient-to from-blue-50 via-white to-teal-50 overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-0 left-0 w-60 h-60 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
 
@@ -93,6 +103,7 @@ const About = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

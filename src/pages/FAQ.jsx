@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { Helmet } from "react-helmet"
 
 const faqs = [
   { q: "Is my data secure?", a: "Yes, we use 256-bit encryption for all & follow industry-standard security protocols to protect your data." },
@@ -18,6 +19,15 @@ const FAQ = () => {
   };
 
   return (
+    <>
+      <Helmet>
+                <title>FAQ | Yours Money </title>
+                <meta
+                  name="description"
+                  content="Apply for personal, business, home, car, education, and other loans with Yours Money. Quick approval and minimal documentation."
+                />
+              </Helmet>
+
     <section className="min-h-screen bg-gray-50 py-16 px-6 md:px-12">
       <div className="max-w-5xl mx-auto">
         <h1 className="text-4xl font-bold text-blue-600 mb-12 text-center">Frequently Asked Questions</h1>
@@ -44,6 +54,7 @@ const FAQ = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

@@ -17,8 +17,8 @@ import Terms from "./pages/Terms";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Support from "./pages/Support";
 import Partner from "./pages/Partner";
-import FreelancerForm from "./forms/FreelancerForm";
-import BusinessAssociate from "./forms/BusinessAssociate";
+import Freelancer from "./pages/Freelancer";
+import BusinessAssociate from "./pages/BusinessAssociate";
 
 import Career from "./pages/Career";
 
@@ -51,7 +51,7 @@ function App() {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/support" element={<Support />} />
             <Route path="/partner" element={<Partner />} />
-            <Route path="/partner/freelancer" element={<FreelancerForm />} />
+            <Route path="/partner/freelancer" element={<Freelancer />} />
             <Route path="/partner/business-associate" element={<BusinessAssociate />} />
             <Route path="/career" element={<Career />} />
 

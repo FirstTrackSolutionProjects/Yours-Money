@@ -24,10 +24,10 @@ const Insurance = () => {
   return (
     <>
     <Helmet>
-            <title>Insurance | FTST </title>
+            <title>Insurance | Yours Money </title>
             <meta
               name="description"
-              content="Apply for personal, business, home, car, education, and other loans with FTST Job Consulting. Quick approval and minimal documentation."
+              content="Apply for personal, business, home, car, education, and other loans with Yours Money. Quick approval and minimal documentation."
             />
           </Helmet>
 
@@ -35,7 +35,7 @@ const Insurance = () => {
       <div className="grid lg:grid-cols-2 bg-white rounded-xl shadow-lg overflow-hidden">
            {/* Left Side - Image */}
            <img
-             src="/images/insurance.jpg"
+             src="/insurance.jpg"
              alt="Loan"
              className="w-full h-96 object-cover lg:h-auto"
            />

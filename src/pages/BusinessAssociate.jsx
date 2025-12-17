@@ -4,7 +4,7 @@ import getPutObjectUrlService from "../services/s3Services/getPutObjectUrlServic
 import putObjectService from "../services/s3Services/putObjectService";
 import { toast } from "react-toastify";
 import applyForBusinessAssociateService from "../services/partnerServices/applyForBusinessAssociateService";
-
+import { Helmet } from "react-helmet"
 
 const fileFields = [
   "proposal",
@@ -192,7 +192,13 @@ const BusinessAssociate = () => {
   return (
     <>
    
-    
+      <Helmet>
+        <title>Business Associate | Yours Money </title>
+        <meta
+          name="description"
+          content="Apply for personal, business, home, car, education, and other loans with Yours Money. Quick approval and minimal documentation."
+        />
+        </Helmet>
     <div className="bg-white p-6 rounded-lg shadow-md max-w-3xl mx-auto mt-10">
       <h2 className="text-2xl font-semibold mb-6 text-center text-blue-700">
         Business Associate Registration Form
@@ -202,7 +208,7 @@ const BusinessAssociate = () => {
         <div className="grid lg:grid-cols-2 bg-white rounded-xl shadow-lg overflow-hidden">
           {/* Left Side - Image */}
           <img
-            src="/Partners/business-associate.jpg"
+            src="/Loan/business-associate.jpg"
             alt="partner"
             className="w-full h-96 lg:h-[400px] object-cover"
           />

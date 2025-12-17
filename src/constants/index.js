@@ -53,3 +53,8 @@ export const INSURANCE_COUNTRIES = Object.freeze(['India']);
 export const INSURANCE_TYPES = Object.freeze(['Health Insurance', 'Life Insurance', 'Vehicle Insurance', 'Travel Insurance']);
 
 export const INSURANCE_PROFESSIONS = Object.freeze(['Business', 'Service']);
+
+////////////Contact Us ENUMS////////////
+
+export const CONTACT_STD_CODES = Object.freeze(['+91']);
+

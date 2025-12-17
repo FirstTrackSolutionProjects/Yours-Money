@@ -4,6 +4,7 @@ import getPutObjectUrlService from "../services/s3Services/getPutObjectUrlServic
 import putObjectService from "../services/s3Services/putObjectService";
 import applyForBusinessLoanService from "../services/loanServices/businessLoanServices/applyForBusinessLoanService";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet"
 
 const fileFields = [
   "photo", "officePhoto1", "officePhoto2", "officePhoto3", "officePhoto4",
@@ -177,6 +178,15 @@ const BusinessLoan = () => {
   };
 
   return (
+    <>
+     <Helmet>
+          <title>Business Loan | Yours Money </title>
+              <meta
+                name="description"
+                content="Apply for personal, business, home, car, education, and other loans with Yours Money. Quick approval and minimal documentation."
+              />
+      </Helmet>
+
     <form
       onSubmit={handleSubmit}
       className="max-w-3xl mx-auto bg-white p-6 rounded shadow space-y-6"
@@ -845,6 +855,7 @@ const BusinessLoan = () => {
         Apply
       </button>
     </form>
+    </>
   );
 };
 

@@ -36,7 +36,7 @@ const Footer = () => {
         <div>
           <h2 className="text-xl font-semibold mb-4">Contact Us</h2>
           {/* <p>Office: 12.B.B.D. Bag (East), 2nd Floor, Kolkata - 700001</p> */}
-          <p>Phone: <a href="tel:+919903020636" className="hover:text-yellow-300 transition">+91 9903020636</a></p>
+          <p>Phone: <a href="tel:+911234567890" className="hover:text-yellow-300 transition">+91 1234567890</a></p>
           <p>Email: <a href="mailto:contact@yoursmoney.in" className="hover:text-yellow-300 transition">contact@yoursmoney.in</a></p>
 
         {/* Social Icons */}

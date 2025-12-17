@@ -74,8 +74,8 @@ const Footer = () => {
       </div>
 
       {/* Bottom copyright */}
-       <div className="text-center text-sm text-gray-400 mt-6 pb-4">
-      @Yours Money, developed by First Track Solution Technologies. All Rights Reserved.
+      <div className="text-center text-mdtext-gray-200 mt-6 pb-4">
+      Copyright © 2025 Yours Money, All Rights Reserved.
       </div>
     </footer>
   );

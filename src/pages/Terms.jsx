@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-scroll";
+import { Helmet } from "react-helmet"
 
 const sections = [
   { id: "use", title: "1. Use of the Platform" },
@@ -12,6 +13,14 @@ const sections = [
 
 const Terms = () => {
   return (
+    <>
+      <Helmet>
+                <title>Terms | Yours Money </title>
+                <meta
+                  name="description"
+                  content="Apply for personal, business, home, car, education, and other loans with Yours Money. Quick approval and minimal documentation."
+                />
+              </Helmet>
     <section className="min-h-screen bg-gray-50 py-16 px-6 md:px-12">
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10">
         {/* Sticky Table of Contents */}
@@ -108,6 +117,7 @@ const Terms = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

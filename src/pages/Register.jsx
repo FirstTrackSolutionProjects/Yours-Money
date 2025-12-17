@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Helmet } from "react-helmet"
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -29,6 +30,14 @@ const Register = () => {
   };
 
   return (
+    <>
+      <Helmet>
+                <title>Register | Yours Money </title>
+                <meta
+                  name="description"
+                  content="Apply for personal, business, home, car, education, and other loans with Yours Money. Quick approval and minimal documentation."
+                />
+              </Helmet>
     <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-blue-100 via-blue-200 to-blue-100 px-4">
       <div className="bg-white shadow-2xl rounded-3xl p-10 w-full max-w-md m-4">
         <img
@@ -129,6 +138,7 @@ const Register = () => {
         </p>
       </div>
     </div>
+    </>
   );
 };
 

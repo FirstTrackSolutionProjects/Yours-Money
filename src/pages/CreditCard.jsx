@@ -1,5 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
+import getPutObjectUrlService from "../services/s3Services/getPutObjectUrlService";
+import putObjectService from "../services/s3Services/putObjectService";
+import { toast } from "react-toastify";
+import applyForCreditCardService from "../services/creditCardServices/applyForCreditCardService";
+import { Helmet } from "react-helmet";
 
 // For future file uploads, keep these arrays ready
 const fileFields = [
@@ -118,23 +124,22 @@ const CreditCard = () => {
 
   return (
      <>
-  
-    <div className="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg">
-      <h2 className="text-2xl font-bold text-center text-blue-700 mb-4">
-        Credit Card 
-      </h2>
-     <p className="text-center text-gray-600 mb-6">
-      Credit card services are available. Choose a card that suits your needs and start enjoying the benefits.
-    </p>
+    <Helmet>
+            <title>Credit Card | Yours Money </title>
+            <meta
+              name="description"
+              content="Apply for personal, business, home, car, education, and other loans with Yours Money. Quick approval and minimal documentation."
+            />
+          </Helmet>
 
-
+    <div className="max-w-2xl mx-auto mt-10 p-6 bg-white shadow-md rounded-lg">
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="grid lg:grid-cols-2 bg-white rounded-xl shadow-lg overflow-hidden">
           {/* Left Side - Image */}
           <img
             src="/credit-card.jpg"
             alt="creditcard"
-            className="w-full h-60 object-cover"
+            className="w-full h-70 object-cover"
           />
         </div>
 
@@ -327,7 +332,7 @@ const CreditCard = () => {
       <div className="text-center mt-6 space-y-2">
         <p className="text-sm text-gray-500">Or reach us on WhatsApp:</p>
         <a
-          href="https://wa.me/919999999999"
+          href="https://wa.me/919903020636"
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-600 hover:underline block"

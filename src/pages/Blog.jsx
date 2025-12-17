@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 const blogs = [
   {
@@ -53,6 +54,16 @@ const Blog = () => {
   };
 
   return (
+    <>
+
+      <Helmet>
+                <title>Blog | Yours Money </title>
+                <meta
+                  name="description"
+                  content="Apply for personal, business, home, car, education, and other loans with Yours Money. Quick approval and minimal documentation."
+                />
+              </Helmet>
+
     <section className="min-h-screen bg-gray-50 py-16 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
@@ -110,6 +121,7 @@ const Blog = () => {
         )}
       </div>
     </section>
+    </>
   );
 };
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { FaUserTie, FaBriefcase } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet"
 
 const Partner = () => {
   const navigate = useNavigate();
@@ -10,6 +11,14 @@ const Partner = () => {
   };
 
   return (
+    <>
+      <Helmet>
+                <title>Partner | Yours Money </title>
+                <meta
+                  name="description"
+                  content="Apply for personal, business, home, car, education, and other loans with Yours Money. Quick approval and minimal documentation."
+                />
+              </Helmet>
     <section className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 via-white to-teal-50 py-20 px-6 overflow-hidden">
       {/* Background Shapes */}
       <div className="absolute top-20 left-20 w-64 h-64 bg-blue-200 rounded-full opacity-20 blur-3xl animate-pulse"></div>
@@ -95,6 +104,7 @@ const Partner = () => {
         `}
       </style>
     </section>
+    </>
   );
 };
 

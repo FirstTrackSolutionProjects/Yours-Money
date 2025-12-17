@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet"
 
 const Support = () => {
   const [formData, setFormData] = useState({ name: "", email: "", issue: "" });
@@ -15,6 +16,15 @@ const Support = () => {
   };
 
   return (
+    <>
+      <Helmet>
+                <title>Support | Yours Money </title>
+                <meta
+                  name="description"
+                  content="Apply for personal, business, home, car, education, and other loans with Yours Money. Quick approval and minimal documentation."
+                />
+              </Helmet>
+
     <section className="min-h-screen bg-gray-50 py-16 px-6 md:px-12">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl font-bold text-blue-600 mb-8 text-center">Support Center</h1>
@@ -70,6 +80,7 @@ const Support = () => {
         </form>
       </div>
     </section>
+    </>
   );
 };
 

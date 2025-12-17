@@ -3022,14 +3022,83 @@ const[insuranceLoanFormFields, setInsuranceLoanFormFields] = useState({
         },
     });
 
+/////////////CONTACT FORM FIELDS///////////////////////////
+const [contactFormFields, setContactFormFields] = useState({
+    fullName: {
+        label: "Full Name",
+        inputType: 'text',
+        required: true,
+        validation: z.string({
+            error: issue =>
+                issue.input === undefined
+                    ? 'Full name is required'
+                    : issue.code === 'invalid_type'
+                    ? 'Full name must be string'
+                    : undefined
+            }).min(3, { error: 'Full name must be at least 3 characters' }),
+    },
+    email: {
+        label: "Email",
+        inputType: 'email',
+        required: true,
+        validation: z.string({
+            error: issue =>
+                issue.input === undefined
+                    ? 'Email is required'
+                    : issue.code === 'invalid_type'
+                    ? 'Email must be string'
+                    : undefined
+            }).email({ error: 'Invalid email address' }),
+    },
+     stdCode: {
+        label: "STD Code",
+        inputType: "select",
+        required: true,
+        options: [],
+        getOptions: () => MORTGAGE_LOAN_STD_CODES,
+        validation: z.enum(MORTGAGE_LOAN_STD_CODES, { error: 'STD Code is required' }),
+        colSpan: 2
+    },
+    phone: {
+        label: "Phone Number",
+        inputType: 'text',
+        required: true,
+        validation: z.string({
+            error: issue =>
+                issue.input === undefined
+                    ? 'Phone number is required'
+                    : issue.code === 'invalid_type'
+                    ? 'Phone must be string'
+                    : undefined
+            }).regex(/^[6-9]\d{9}$/, { error: 'Enter valid 10‑digit Indian mobile number' }),
+    },
+    message: {
+        label: "Message",
+        inputType: 'textField',
+        maxLength:500,
+        required: true,
+        validation: z.string({
+            error: issue =>
+                issue.input === undefined
+                    ? 'Message is required'
+                    : issue.code === 'invalid_type'
+                    ? 'Message must be string'
+                    : undefined
+            }).min(10, { error: 'Message must be at least 6 characters' })
+            .max(500, "Message must be less than 500 characters"),
+    },
+});
+
  return (
   <AppContext.Provider value={{
      mortgageLoanFormFields,
     setMortgageLoanFormFields,
     homeLoanFormFields,
     setHomeLoanFormFields,
-       insuranceLoanFormFields,
+    insuranceLoanFormFields,
     setInsuranceLoanFormFields,
+    contactFormFields,
+    setContactFormFields,
     refreshFormUuid,
   }}>
     {children}

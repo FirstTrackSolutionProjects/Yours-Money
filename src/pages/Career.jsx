@@ -1,4 +1,10 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet"
+import { v4 as uuidv4 } from "uuid";
+import getPutObjectUrlService from "@/services/s3Services/getPutObjectUrlService";
+import putObjectService from "@/services/s3Services/putObjectService";
+import applyForCareerService from "@/services/careerServices/applyForCareerService";
+import { toast } from "react-toastify";
 
 const Career = () => {
   const [formData, setFormData] = useState({
@@ -15,6 +21,9 @@ const Career = () => {
     country: "",
     description: "",
     qualification: "",
+    cv: "",
+  });
+  const [files, setFiles] = useState({
     cv: null,
   });
 
@@ -26,22 +35,63 @@ const Career = () => {
       setFormData({ ...formData, [name]: value });
     }
   };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const phoneRegex = /^[0-9]{10}$/;
-    if (!phoneRegex.test(formData.phone)) {
-      alert("Please enter a valid 10-digit Indian phone number.");
-      return;
-    }
-
-    console.log("Form submitted:", formData);
-    alert("Application submitted successfully!");
+  const handleFileChange = (e) => {
+    const { name, files } = e.target;
+    setFiles({ ...files, [name]: files[0] });
   };
 
+  const uploadFile = async (file) => {
+    try {
+        const filetype = file.type;
+        const filename = file.name;
+        const key = `careers/${uuidv4()}/${filename}`;
+        const uploadUrl = await getPutObjectUrlService(key, filetype, false)
+        await putObjectService(uploadUrl, file, filetype);
+        return key;
+    } catch (error) {
+        console.error("File upload failed:", error);
+    }
+  }
+  
+  const handleUpload = async () => {
+    if (files.cv) {
+        const cvKey = await uploadFile(files.cv);
+        if (!cvKey) {
+            toast.error("CV upload failed. Please try again.");
+            return false;
+        }
+        setFormData({ ...formData, cv: cvKey });
+        return true;
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+    if (await handleUpload() === false) return;
+  
+    await applyForCareerService(formData);
+
+    console.log("Form submitted:", formData);
+    toast.success("Application submitted successfully!");
+  } catch (error) {
+    console.error("Form submission failed:", error);
+    toast.error(error?.message || "Failed to submit application");
+  };
+}
+
+
   return (
-    <section className="min-h-screen bg-gradient-to-br from-blue-50 via-cyan-50 to-teal-50 flex flex-col items-center justify-center px-6 py-16">
+    <>
+      <Helmet>
+                <title>Career | Yours Money </title>
+                <meta
+                  name="description"
+                  content="Apply for personal, business, home, car, education, and other loans with Yours Money. Quick approval and minimal documentation."
+                />
+              </Helmet>
+
+    <section className="min-h-screen bg-gradient-to from-blue-50 via-cyan-50 to-teal-50 flex flex-col items-center justify-center px-6 py-16">
       {/* Heading Section */}
       <div className="text-center mb-10">
           
@@ -151,8 +201,8 @@ const Career = () => {
                   <input
                     type="radio"
                     name="gender"
-                    value="male"
-                    checked={formData.gender === "male"}
+                    value="Male"
+                    checked={formData.gender === "Male"}
                     onChange={handleChange}
                     className="accent-blue-600"
                   />
@@ -162,8 +212,8 @@ const Career = () => {
                   <input
                     type="radio"
                     name="gender"
-                    value="female"
-                    checked={formData.gender === "female"}
+                    value="Female"
+                    checked={formData.gender === "Female"}
                     onChange={handleChange}
                     className="accent-blue-600"
                   />
@@ -276,7 +326,7 @@ const Career = () => {
             <input
               type="file"
               name="cv"
-              onChange={handleChange}
+              onChange={handleFileChange}
               className="w-full border border-gray-300 p-3 rounded-lg file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-blue-600 file:text-white hover:file:bg-blue-700 cursor-pointer"
               required
             />
@@ -285,13 +335,14 @@ const Career = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-blue-600 to-teal-500 text-white py-3 rounded-lg text-lg font-semibold shadow-md hover:shadow-lg hover:opacity-90 transition-all"
+            className="w-full bg-gradient-to from-blue-600 to-teal-500 text-white py-3 rounded-lg text-lg font-semibold shadow-md hover:shadow-lg hover:opacity-90 transition-all"
           >
             Apply Now
           </button>
         </form>
       </div>
     </section>
+    </>
   );
 };
 
